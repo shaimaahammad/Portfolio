@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaimaa Hammad — Educational Designer & Mathematics Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F0;
+    --green-deep: #1B3A2D;
+    --green-mid: #2D5A42;
+    --green-light: #4A7C5F;
+    --amber: #C8882A;
+    --amber-light: #E8B86D;
+    --teal: #3A8A78;
+    --teal-light: #6BB5A6;
+    --sand: #F0E8D8;
+    --warm-gray: #8A8078;
+    --text-dark: #1A1410;
+    --text-mid: #4A4038;
+    --border: rgba(26,26,20,0.10);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250,247,240,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 500; letter-spacing: 0.04em;
+    color: var(--green-deep);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--warm-gray);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--green-deep); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 5vw;
+    padding-top: 64px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: var(--sand);
+    z-index: 0;
+  }
+  .hero-text { position: relative; z-index: 1; padding-right: 4rem; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--amber);
+    border: 1px solid var(--amber-light);
+    padding: 0.3rem 0.9rem; border-radius: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 400; line-height: 1.1;
+    color: var(--green-deep);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--amber); }
+  .hero-desc {
+    font-size: 1rem; color: var(--text-mid); max-width: 480px;
+    margin-bottom: 2.5rem; line-height: 1.8;
+  }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--green-deep); color: var(--cream);
+    padding: 0.75rem 1.8rem; border: none; border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--green-mid); }
+  .btn-ghost {
+    background: transparent; color: var(--green-deep);
+    padding: 0.75rem 1.8rem;
+    border: 1px solid var(--green-deep); border-radius: 2px;
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { background: var(--green-deep); color: var(--cream); }
+  .hero-visual { position: relative; z-index: 1; padding: 3rem 0; }
+  .hero-card {
+    background: white; border-radius: 4px;
+    border: 0.5px solid var(--border);
+    padding: 2.5rem;
+    box-shadow: 0 12px 60px rgba(27,58,45,0.10);
+  }
+  .hero-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 500; color: var(--green-deep);
+    margin-bottom: 2rem; padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .stat-box { text-align: center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 300; color: var(--green-deep);
+    display: block; line-height: 1;
+  }
+  .stat-label { font-size: 0.72rem; color: var(--warm-gray); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.3rem; }
+  .badge-row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .badge {
+    font-size: 0.72rem; padding: 0.3rem 0.8rem; border-radius: 2rem;
+    font-weight: 500; letter-spacing: 0.04em;
+  }
+  .badge-green { background: #E8F2EC; color: var(--green-mid); }
+  .badge-amber { background: #F8EDDA; color: var(--amber); }
+  .badge-teal { background: #E0F0EC; color: var(--teal); }
+
+  /* SECTION BASE */
+  section { padding: 6rem 5vw; }
+  .section-header { margin-bottom: 3.5rem; }
+  .section-tag {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--amber);
+    display: block; margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400; color: var(--green-deep); line-height: 1.2;
+  }
+  .section-subtitle {
+    font-size: 1rem; color: var(--text-mid); max-width: 560px;
+    margin-top: 0.75rem; line-height: 1.8;
+  }
+
+  /* ABOUT */
+  .about { background: var(--green-deep); color: var(--cream); }
+  .about .section-tag { color: var(--amber-light); }
+  .about .section-title { color: var(--cream); }
+  .about .section-subtitle { color: rgba(250,247,240,0.72); }
+  .about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: start; }
+  .about-text { font-size: 1.05rem; line-height: 1.85; color: rgba(250,247,240,0.88); }
+  .about-text p + p { margin-top: 1.2rem; }
+  .expertise-list { list-style: none; }
+  .expertise-list li {
+    padding: 0.9rem 0;
+    border-bottom: 0.5px solid rgba(250,247,240,0.15);
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.92rem; color: rgba(250,247,240,0.85);
+  }
+  .expertise-list li::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber-light); flex-shrink: 0;
+  }
+  .expertise-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--cream);
+    margin-bottom: 1.2rem;
+  }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .project-card {
+    background: white; border-radius: 4px;
+    border: 0.5px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(27,58,45,0.12);
+  }
+  .project-card.featured { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; }
+  .project-img {
+    height: 240px; overflow: hidden;
+    background: var(--sand);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+  }
+  .project-img img { width: 100%; height: 100%; object-fit: cover; }
+  .project-card.featured .project-img { height: 100%; min-height: 300px; }
+  .project-body { padding: 2rem; }
+  .project-tag {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: 0.75rem; display: block;
+  }
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 400; color: var(--green-deep);
+    line-height: 1.25; margin-bottom: 0.75rem;
+  }
+  .project-desc { font-size: 0.9rem; color: var(--text-mid); line-height: 1.75; }
+  .project-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.2rem; }
+  .pill {
+    font-size: 0.7rem; padding: 0.25rem 0.75rem;
+    background: var(--sand); color: var(--text-mid);
+    border-radius: 2rem; font-weight: 500;
+  }
+  .project-outcomes {
+    margin-top: 1.5rem; padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .outcome-label {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--warm-gray);
+    margin-bottom: 0.75rem; display: block;
+  }
+  .outcome-item {
+    display: flex; gap: 0.6rem; align-items: flex-start;
+    font-size: 0.86rem; color: var(--text-mid); margin-bottom: 0.5rem;
+    line-height: 1.55;
+  }
+  .outcome-item::before {
+    content: '→'; color: var(--amber); flex-shrink: 0; margin-top: 0.05rem;
+  }
+
+  /* LOGFRAME */
+  .logframe { background: var(--sand); }
+  .lf-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; background: white; border-radius: 4px; overflow: hidden; }
+  .lf-table th {
+    background: var(--green-deep); color: var(--cream);
+    padding: 0.9rem 1.2rem; text-align: left;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .lf-table td {
+    padding: 1rem 1.2rem; border-bottom: 0.5px solid var(--border);
+    vertical-align: top; color: var(--text-mid); line-height: 1.65;
+  }
+  .lf-table tr:last-child td { border-bottom: none; }
+  .lf-table td:first-child {
+    font-weight: 600; color: var(--green-deep); width: 100px; font-size: 0.82rem;
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .lf-table tr:nth-child(even) td { background: var(--sand); }
+  .lf-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; color: var(--green-deep); margin-bottom: 0.4rem;
+  }
+  .lf-meta { font-size: 0.82rem; color: var(--warm-gray); margin-bottom: 2rem; }
+
+  /* CERTIFICATIONS */
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .cert-card {
+    background: white; border: 0.5px solid var(--border);
+    border-radius: 4px; padding: 2rem;
+    position: relative; overflow: hidden;
+    transition: box-shadow 0.3s;
+  }
+  .cert-card:hover { box-shadow: 0 8px 40px rgba(27,58,45,0.10); }
+  .cert-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%; background: var(--teal);
+  }
+  .cert-card.amber::before { background: var(--amber); }
+  .cert-card.green::before { background: var(--green-mid); }
+  .cert-issuer { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 0.5rem; }
+  .cert-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--green-deep); margin-bottom: 0.4rem; line-height: 1.3; }
+  .cert-date { font-size: 0.78rem; color: var(--warm-gray); }
+  .cert-verify {
+    display: inline-block; margin-top: 1rem;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--teal); text-decoration: none;
+    border-bottom: 1px solid var(--teal-light);
+    padding-bottom: 1px;
+  }
+
+  /* SKILLS */
+  .skills-section { background: white; }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .skill-group-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--green-deep);
+    margin-bottom: 1.2rem; padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--amber-light);
+  }
+  .skill-item {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.55rem 0; border-bottom: 0.5px solid var(--border);
+    font-size: 0.88rem; color: var(--text-mid);
+  }
+  .skill-dots { display: flex; gap: 3px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .dot.filled { background: var(--green-mid); }
+  .dot.empty { background: var(--sand); border: 1px solid var(--border); }
+
+  /* CONTACT */
+  .contact { background: var(--green-deep); color: var(--cream); text-align: center; }
+  .contact .section-title { color: var(--cream); }
+  .contact .section-subtitle { color: rgba(250,247,240,0.7); margin: 0 auto 3rem; }
+  .contact-cards { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+  .contact-card {
+    background: rgba(250,247,240,0.08);
+    border: 0.5px solid rgba(250,247,240,0.2);
+    border-radius: 4px; padding: 1.5rem 2rem;
+    min-width: 180px; text-align: center;
+    text-decoration: none; color: var(--cream);
+    transition: background 0.2s;
+  }
+  .contact-card:hover { background: rgba(250,247,240,0.14); }
+  .contact-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .contact-card-label { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250,247,240,0.55); margin-bottom: 0.2rem; }
+  .contact-card-val { font-size: 0.9rem; }
+
+  /* FOOTER */
+  footer {
+    background: #0F2318;
+    padding: 2rem 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: 0.78rem; color: rgba(250,247,240,0.4); }
+
+  /* ANIMATIONS */
+  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s, transform 0.7s; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 80px; }
+    .hero::before { display: none; }
+    .hero-text { padding-right: 0; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+    .project-card.featured .project-img { height: 220px; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Shaimaa Hammad</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#credentials">Credentials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text fade-in">
+    <span class="hero-tag">Educational Designer · Cairo, Egypt</span>
+    <h1>Mathematics<br>specialist &<br><em>curriculum</em><br>designer</h1>
+    <p class="hero-desc">Bridging the gap between rigorous mathematics education and teacher well-being — through quality-controlled curriculum, STEM-driven instructional design, and evidence-based educational projects.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+  <div class="hero-visual fade-in">
+    <div class="hero-card">
+      <p class="hero-card-title">At a Glance</p>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">Years in Curriculum QC</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Professional Diplomas</span>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box">
+          <span class="stat-num">K–12</span>
+          <span class="stat-label">Teaching Experience</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">SDGs</span>
+          <span class="stat-label">4 & 3 Aligned</span>
+        </div>
+      </div>
+      <div class="badge-row">
+        <span class="badge badge-green">STEM Education</span>
+        <span class="badge badge-amber">Instructional Design</span>
+        <span class="badge badge-teal">M&E</span>
+        <span class="badge badge-green">Product Owner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid fade-in">
+    <div>
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Educator. Designer.<br>Impact Maker.</h2>
+      </div>
+      <div class="about-text">
+        <p>I hold a B.Sc. in Advanced Mathematics from Helwan University and a Professional Diploma in STEM Education from Ain Shams University (2022). My career spans classroom teaching at national and international schools, and over four years as a Quality Control specialist at Nahdet Misr's Al-Adwaa educational project — where I contributed to curriculum review, content alignment, and print material development.</p>
+        <p>Currently, I am deepening my expertise in Monitoring & Evaluation (M&E) through professional coursework, while actively participating in the Egypt Scholars Mentorship Program as a mentee — focusing on professional growth and educational leadership.</p>
+        <p>I am now evaluating an opportunity to return to Nahdet Misr as a Product Owner for printed educational materials, where I would lead content strategy, quality assurance, and product lifecycle for K–12 mathematics resources.</p>
+      </div>
+    </div>
+    <div>
+      <p class="expertise-title">Core Competencies</p>
+      <ul class="expertise-list">
+        <li>Mathematics Curriculum Development (K–12)</li>
+        <li>STEM Instructional Design</li>
+        <li>Educational Quality Control & Review</li>
+        <li>Monitoring & Evaluation (M&E)</li>
+        <li>Teachers' Professional Development</li>
+        <li>Product Ownership — Print Educational Materials</li>
+        <li>Social Impact Project Design (SDG 4 & SDG 3)</li>
+        <li>Arabic & English Content Creation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-in">
+    <span class="section-tag">Featured Work</span>
+    <h2 class="section-title">Projects & Contributions</h2>
+    <p class="section-subtitle">A selection of educational design projects, curriculum materials, and social impact initiatives.</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- KADA — Featured -->
+    <div class="project-card featured fade-in">
+      <div class="project-img">
+        <div style="background: linear-gradient(135deg, #1B3A2D 0%, #3A8A78 100%); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; gap: 1rem;">
+          <div style="font-size: 3rem;">🎓</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; letter-spacing: 0.1em;">KADA</div>
+          <div style="font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75;">Teachers' Mental Health</div>
+          <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+            <span style="background: rgba(255,255,255,0.15); padding: 0.2rem 0.7rem; border-radius: 2rem; font-size: 0.7rem;">SDG 4</span>
+            <span style="background: rgba(255,255,255,0.15); padding: 0.2rem 0.7rem; border-radius: 2rem; font-size: 0.7rem;">SDG 3</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-tag">Social Impact · Education · Mental Health</span>
+        <h3 class="project-title">KADA — Mental Health Awareness for Teachers</h3>
+        <p class="project-desc">KADA is a structured teacher professional development program designed to raise awareness of mental health among educators. The program addresses common psychological challenges teachers face — including burnout, anxiety, and stress — and equips them with practical skills for resilience, time management, and help-seeking.</p>
+        <p class="project-desc" style="margin-top: 0.75rem;">Pitched at the Giza Systems Foundation's <strong>Social Impact Acceleration Program Demo Day</strong>, KADA aligns with UN SDG 4 (Quality Education) and SDG 3 (Good Health & Well-Being).</p>
+        <div class="project-outcomes">
+          <span class="outcome-label">Key Outcomes</span>
+          <div class="outcome-item">Full program with 10+ structured sessions including interactive activities (e.g., "Mental Health Wheel")</div>
+          <div class="outcome-item">Delivered to teachers; participant feedback integrated into program design</div>
+          <div class="outcome-item">Pitch-ready deck presented at Demo Day with value proposition and impact metrics</div>
+          <div class="outcome-item">Bilingual content (Arabic/English) with facilitator guides and participant workbooks</div>
+        </div>
+        <div class="project-pills">
+          <span class="pill">Instructional Design</span>
+          <span class="pill">Curriculum Development</span>
+          <span class="pill">Teachers' PD</span>
+          <span class="pill">Social Entrepreneurship</span>
+          <span class="pill">Giza Systems Foundation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Math Revision -->
+    <div class="project-card fade-in">
+      <div class="project-img">
+        <div style="background: linear-gradient(135deg, #F0E8D8 0%, #FAF7F0 100%); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem;">
+          <div style="font-size: 2.5rem;">📐</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #1B3A2D; font-weight: 500;">Grade 2 Mathematics</div>
+          <div style="font-size: 0.78rem; color: #8A8078; letter-spacing: 0.1em; text-transform: uppercase;">EJS New Cairo 2</div>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-tag">Curriculum · Primary Mathematics</span>
+        <h3 class="project-title">Grade 2 Math Revision Series</h3>
+        <p class="project-desc">A comprehensive revision resource for Grade 2 mathematics at EJS New Cairo 2, covering Lessons 61–70. Designed using real Egyptian banknotes as manipulatives, the series integrates place value, money concepts, addition/subtraction, patterns, and even/odd numbers into visually engaging, activity-based worksheets.</p>
+        <div class="project-outcomes">
+          <span class="outcome-label">Scope of Work</span>
+          <div class="outcome-item">Calendar & time concepts with structured read-and-trace exercises</div>
+          <div class="outcome-item">Egyptian banknote recognition and multi-strategy money calculations (up to 500 LE)</div>
+          <div class="outcome-item">Place value / Money Mat activities using 100s, 10s, and 1s</div>
+          <div class="outcome-item">Story problems with scaffolded addition and subtraction vocabulary</div>
+        </div>
+        <div class="project-pills">
+          <span class="pill">Primary Mathematics</span>
+          <span class="pill">Activity Design</span>
+          <span class="pill">International School</span>
+          <span class="pill">STEM Approach</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Al-Adwaa / Nahdet Misr -->
+    <div class="project-card fade-in">
+      <div class="project-img">
+        <div style="background: linear-gradient(135deg, #2D5A42 0%, #C8882A 100%); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; gap: 0.75rem;">
+          <div style="font-size: 2.5rem;">📚</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; letter-spacing: 0.06em;">Al-Adwaa Project</div>
+          <div style="font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8;">Nahdet Misr</div>
+        </div>
+      </div>
+      <div class="project-body">
+        <span class="project-tag">Quality Control · Educational Publishing</span>
+        <h3 class="project-title">Al-Adwaa Educational Project — QC Specialist</h3>
+        <p class="project-desc">Over four years as a Quality Control specialist and Subject Matter Expert (SME) for Nahdet Misr's Al-Adwaa project — a national-scale Arabic educational initiative. Responsibilities included curriculum accuracy review, content alignment to national standards, and instructional quality assurance for print materials across multiple grade levels.</p>
+        <div class="project-outcomes">
+          <span class="outcome-label">Responsibilities</span>
+          <div class="outcome-item">Content review and accuracy verification for K–12 mathematics materials</div>
+          <div class="outcome-item">Alignment checks against national curriculum frameworks</div>
+          <div class="outcome-item">Cross-functional collaboration with authors, editors, and designers</div>
+          <div class="outcome-item">SME input on mathematical concept sequencing and pedagogical approach</div>
+        </div>
+        <div class="project-pills">
+          <span class="pill">Curriculum QC</span>
+          <span class="pill">Educational Publishing</span>
+          <span class="pill">Mathematics SME</span>
+          <span class="pill">Nahdet Misr</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOGFRAME -->
+<section class="logframe" id="logframe">
+  <div class="section-header fade-in">
+    <span class="section-tag">M&E Framework</span>
+    <h2 class="section-title">KADA — Project Logframe</h2>
+    <p class="section-subtitle">A results-based framework mapping KADA's theory of change — from inputs to impact — applying M&E principles from professional coursework.</p>
+  </div>
+  <div class="fade-in">
+    <p class="lf-title">KADA: Mental Health Awareness & Support Program for Teachers</p>
+    <p class="lf-meta">Project Designer: Shaimaa Hammad &nbsp;|&nbsp; 2024–2025 &nbsp;|&nbsp; Egypt</p>
+    <div style="overflow-x: auto;">
+    <table class="lf-table">
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Project Summary</th>
+          <th>Indicators</th>
+          <th>Means of Verification</th>
+          <th>Risks & Assumptions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Impact</td>
+          <td>Improved mental health and professional effectiveness of teachers, leading to higher quality learning environments for students in Egypt</td>
+          <td>% of teachers reporting reduced burnout after 6 months; student satisfaction scores in participating schools</td>
+          <td>Pre/post wellbeing surveys; school performance reports; longitudinal follow-up questionnaires</td>
+          <td>Assumption: School administrations support and sustain the program; Risk: stigma around mental health reduces participation</td>
+        </tr>
+        <tr>
+          <td>Outcomes</td>
+          <td>Teachers demonstrate improved mental health literacy, coping skills, and help-seeking behavior; reduced stress and absenteeism</td>
+          <td>≥70% of participants score higher on coping skills assessment post-program; ≥60% report using at least one new strategy</td>
+          <td>Pre/post program assessment tools; participant self-report logs (Kada Journal); facilitator observation notes</td>
+          <td>Assumption: Participants engage consistently; Risk: high teacher workload limits time for program activities</td>
+        </tr>
+        <tr>
+          <td>Outputs</td>
+          <td>10+ structured sessions delivered; bilingual facilitator guides and participant workbooks produced; a social support network established among participants</td>
+          <td>Number of sessions completed; attendance rate ≥80%; materials distributed to 100% of participants</td>
+          <td>Attendance registers; session feedback forms; material distribution records; post-session reflection surveys</td>
+          <td>Assumption: Facilitators are adequately trained; Risk: participant dropout due to school schedule conflicts</td>
+        </tr>
+        <tr>
+          <td>Inputs</td>
+          <td>Trained facilitators; bilingual program materials (Arabic/English); institutional partnerships; funding; venue access; M&E tools</td>
+          <td>Number of trained facilitators; budget utilization rate; materials production timeline met</td>
+          <td>Partnership MOUs; budget reports; procurement records; training completion certificates</td>
+          <td>Assumption: Funding secured and partnerships formalized on schedule; Risk: logistics challenges in accessing schools</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials" style="background: white;">
+  <div class="section-header fade-in">
+    <span class="section-tag">Education & Certifications</span>
+    <h2 class="section-title">Credentials</h2>
+  </div>
+  <div class="cert-grid fade-in">
+    <div class="cert-card green">
+      <p class="cert-issuer">Helwan University</p>
+      <p class="cert-name">B.Sc. in Advanced Mathematics</p>
+      <p class="cert-date">Faculty of Science · Cairo, Egypt</p>
+    </div>
+    <div class="cert-card amber">
+      <p class="cert-issuer">Ain Shams University</p>
+      <p class="cert-name">Professional Diploma in STEM Education</p>
+      <p class="cert-date">2022 · Cairo, Egypt</p>
+    </div>
+    <div class="cert-card">
+      <p class="cert-issuer">Mahara-Tech / ITI Platform</p>
+      <p class="cert-name">Instructional Design</p>
+      <p class="cert-date">Completed: 27 March 2026 &nbsp;·&nbsp; Code: 83rmT56JKd</p>
+      <a href="#" class="cert-verify">Verified ↗</a>
+    </div>
+    <div class="cert-card amber">
+      <p class="cert-issuer">FHI 360 / edX</p>
+      <p class="cert-name">Monitoring & Evaluation 101</p>
+      <p class="cert-date">In Progress · 2025–2026</p>
+    </div>
+    <div class="cert-card">
+      <p class="cert-issuer">Egypt Scholars Initiative</p>
+      <p class="cert-name">Mentorship Program — Mentee</p>
+      <p class="cert-date">2026 · Professional Leadership Track</p>
+    </div>
+    <div class="cert-card green">
+      <p class="cert-issuer">Giza Systems Foundation</p>
+      <p class="cert-name">Social Impact Acceleration Program</p>
+      <p class="cert-date">Demo Day Participant · 2024–2025</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section">
+  <div class="section-header fade-in">
+    <span class="section-tag">Capabilities</span>
+    <h2 class="section-title">Skills & Tools</h2>
+  </div>
+  <div class="skills-grid fade-in">
+    <div>
+      <p class="skill-group-title">Educational Expertise</p>
+      <div class="skill-item">Curriculum Design <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div></div>
+      <div class="skill-item">Mathematics (K–12) <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div></div>
+      <div class="skill-item">STEM Instructional Design <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Quality Control (Print) <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div></div>
+      <div class="skill-item">Teachers' PD Design <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+    </div>
+    <div>
+      <p class="skill-group-title">Program & Project Management</p>
+      <div class="skill-item">Monitoring & Evaluation <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Logframe Design <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Product Ownership <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Stakeholder Communication <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Social Impact Strategy <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div></div></div>
+    </div>
+    <div>
+      <p class="skill-group-title">Languages & Tools</p>
+      <div class="skill-item">Arabic (Native) <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div></div>
+      <div class="skill-item">English (Professional) <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Microsoft Office Suite <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Presentation Design <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div></div></div>
+      <div class="skill-item">Data & Survey Tools <div class="skill-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot empty"></div><div class="dot empty"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-header">
+    <span class="section-tag" style="color: var(--amber-light);">Let's Connect</span>
+    <h2 class="section-title">Open to Opportunities</h2>
+    <p class="section-subtitle">I am currently exploring roles in educational product management, curriculum design, and M&E — particularly within educational publishers, NGOs, and ed-tech organizations in Egypt and the MENA region.</p>
+  </div>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="contact-card-icon">📍</div>
+      <p class="contact-card-label">Location</p>
+      <p class="contact-card-val">New Cairo, Egypt</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🎓</div>
+      <p class="contact-card-label">Focus Areas</p>
+      <p class="contact-card-val">EdTech · Curriculum · M&E</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🌍</div>
+      <p class="contact-card-label">Languages</p>
+      <p class="contact-card-val">Arabic · English</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Shaimaa Hammad — Educational Designer & Mathematics Specialist</p>
+  <p>Cairo, Egypt · Open to Opportunities</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
